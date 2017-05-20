@@ -1,2 +1,7 @@
-body .main {width: 100%}
+body .main {width: 100%; padding: 0 1%}
 .logo img {width: 100%; max-width: 150px; margin:0 auto; display: block}
+.tile {width: 48%; display: block; float: left; margin: 3px 1%; padding: 10px 0; background-color: #2aabd2; color: white; height: 30%;}
+.tile i, .tile span {display: block; text-align: center}
+.tile i {font-size: 50px}
+.tile span.value {font-size: 30px; margin-top: 15px}
+

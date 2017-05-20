@@ -17,31 +17,30 @@
     </div>
 
 <div id="message"></div>
-<div>
-    Température de la pièce:
-    <span id="tempRoom"></span>
-</div>
-<div>
-    Température de bébé:
-    <span id="tempBaby"></span>
-</div>
-<div>
-    Humidité de l'air:
-    <span id="humidity"></span>
-</div>
-    <div class="alert alert-success" role="alert">
-        <strong>Well done!</strong> You successfully read this important alert message.
-    </div>
-    <div class="alert alert-info" role="alert">
-        <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
-    </div>
-    <div class="alert alert-warning" role="alert">
+    <div class="alert alert-warning" role="alert" style="display:none">
         <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
         <span>Best check yo self, you're not looking too good.</span>
     </div>
-    <div class="alert alert-danger" role="alert">
+    <div class="alert alert-danger" role="alert" style="display:none">
         <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
         <span>Alert</span>
+    </div>
+
+
+    <div id="tempPieceBlock" class="tile">
+        <i class="fa fa-thermometer-half" aria-hidden="true"></i>
+        <span>Température de la pièce</span>
+        <span class="value" id="tempRoom">25.4</span>
+    </div>
+    <div id="tempBabyBlock" class="tile">
+        <i class="fa fa-smile-o" aria-hidden="true"></i>
+        <span>Température de bébé</span>
+        <span class="value" id="tempBaby">37.1</span>
+    </div>
+    <div id="hygroPieceBlock" class="tile">
+        <i class="fa fa-tint" aria-hidden="true"></i>
+        <span>Humidité de l'air</span>
+        <span class="value" id="humidity">45%</span>
     </div>
 </div>
 <script>

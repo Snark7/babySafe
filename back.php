@@ -37,18 +37,21 @@
         $("#sliderRoom").slider({
             change: function (e, ui) {
                 sendMessage({type: 'tempRoom', value: ui.value});
-            }
+            },
+            value : 40
         });
 
         $("#sliderBaby").slider({
             change: function (e, ui) {
                 sendMessage({type: 'tempBaby', value: ui.value});
-            }
+            },
+            value : 85
         });
         $("#sliderHum").slider({
             change: function (e, ui) {
                 sendMessage({type: 'humidity', value: ui.value});
-            }
+            },
+            value : 45
         });
     });
 </script>
