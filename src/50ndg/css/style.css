@@ -19,5 +19,6 @@ body .main {width: 100%; padding: 0 1%}
 .tile i {font-size: 50px}
 .tile span.value {font-size: 30px; margin-top: 15px}
 
-.infos { padding: 0 10px; display: none;}
+.infos { padding: 0 10px; display: none; padding-top: 30px; text-align: center}
+.infos p {text-align: center}
 .tile.active .infos {display:block;}

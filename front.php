@@ -37,8 +37,7 @@
         <span>Humeur de bébé</span>
         <span class="value" id="babyHumor">Bonne</span>
         <div class="infos">
-            Votre bébé est en forme !<br />
-            Il n'a pas pleuré depuis 32mn.<br />
+            <p>Votre bébé est en forme</p><p>Aucun pleurs détéctés depuis 32 min</p>
         </div>
     </div>
 
@@ -46,23 +45,39 @@
         <i class="fa fa-smile-o" aria-hidden="true"></i>
         <span>Température de bébé</span>
         <span class="value" id="tempBaby">37.1</span>
+        <div class="infos">
+            <p>La température de bébé est capitale</p>
+            <p>Elle doit être comprise entre 36.5° et 37.5°</p>
+        </div>
     </div>
 
     <div id="tempPieceBlock" class="tile">
         <i class="fa fa-thermometer-half" aria-hidden="true"></i>
         <span>Température de la pièce</span>
         <span class="value" id="tempRoom">25.4</span>
+        <div class="infos">
+            <p>La température de la pièce garanti le sommeil</p>
+            <p>Elle doit être comprise entre 16° et 20°</p>
+        </div>
     </div>
 
     <div id="hygroPieceBlock" class="tile">
         <i class="fa fa-tint" aria-hidden="true"></i>
         <span>Humidité de l'air</span>
         <span class="value" id="humidity">45%</span>
+        <div class="infos">
+            <p>L'humidité est gage de qualité de l'air</p>
+            <p>Elle doit être comprise entre 30% et 55%</p>
+        </div>
     </div>
     <div id="noiseBlock" class="tile">
         <i class="fa fa-volume-up" aria-hidden="true"></i>
         <span>Bruits de bébé</span>
         <span class="value" id="noise">70 dB</span>
+        <div class="infos">
+            <p>Bébé à besoin d'un environnement calme</p>
+            <p>Pas plus de 80dB pour garantir le calme</p>
+        </div>
     </div>
 </div>
 <script>
@@ -93,7 +108,7 @@
                 $('#tempBaby').text((Math.round(tmp * 10) / 10) + '°');
 
                 color = '';
-                if (tmp > 35.5) {
+                if (tmp > 36.5) {
                     color = 'green';
                 }
                 if (tmp > 37.5) {
@@ -132,6 +147,7 @@
                 let item = $('#humorBlock').find('i');
                 item.removeClass('fa-'+item.data('icon'));
                 item.addClass('fa-'+message.icon).data('icon', message.icon);
+                $('#humorBlock .infos').html(message.info);
                 break;
         }
     }

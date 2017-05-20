@@ -34,12 +34,12 @@
     <div id="sliderNoise"></div>
 </div>
 <div>Humeur</div>
-<button onclick="sendMessage({type: 'humor', message:'Triste', icon:'frown-o', color: ''})">Triste</button>
-<button onclick="sendMessage({type: 'humor', message:'Bonne', icon:'smile-o', color: 'green'})">Bonne</button>
-<button onclick="sendMessage({type: 'humor', message:'En colère', icon:'frown-o', color: 'red'})">Colère</button>
-<button onclick="sendMessage({type: 'humor', message:'A faim !', icon:'cutlery', color: 'orange'})">A faim !</button>
-<button onclick="sendMessage({type: 'humor', message:'A changer', icon:'signing', color: 'orange'})">A changer</button>
-<button onclick="sendMessage({type: 'humor', message:'Mort', icon:'frown-o', color: 'black'})">Dead</button>
+<button onclick="sendMessage({type: 'humor', message:'Triste', icon:'frown-o', color: '', info : '<p>Votre bébé semble triste</p><p>Ses pleurs nous indique qu\'il à certainement besoin de ses parents</p>'})">Triste</button>
+<button onclick="sendMessage({type: 'humor', message:'Bonne', icon:'smile-o', color: 'green', info : '<p>Votre bébé est en forme</p><p>Aucun pleurs détéctés depuis 32 min</p>'})">Bonne</button>
+<button onclick="sendMessage({type: 'humor', message:'En colère', icon:'frown-o', color: 'red',  info : '<p>Votre bébé est en colère</p><p>Ses pleurs sont plus fort !</p>'})">Colère</button>
+<button onclick="sendMessage({type: 'humor', message:'A faim !', icon:'cutlery', color: 'orange', info : '<p>Votre bébé à faim</p><p>Il est temps de préparer un biberon</p><p>Dernier repas : il y a 3h </p>'})">A faim !</button>
+<button onclick="sendMessage({type: 'humor', message:'A changer', icon:'signing', color: 'orange', info : '<p>Votre est à changer</p><p>Dernière couche changéé : il a 2h</p>'})">A changer</button>
+<button onclick="sendMessage({type: 'humor', message:'Mort', icon:'frown-o', color: 'black',  info : '<p>Aucun signe vitaux détecté</p><p>BabySafe décline toute responsabilitée</p>'})">Dead</button>
 
 <script>
     $(function () {
