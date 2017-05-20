@@ -26,18 +26,25 @@
         <span>Alert</span>
     </div>
 
-
-    <div id="tempPieceBlock" class="tile">
-        <i class="fa fa-thermometer-half" aria-hidden="true"></i>
-        <span>Température de la pièce</span>
-        <span class="value" id="tempRoom">25.4</span>
+    <div id="hygroPieceBlock" class="tile">
+        <i class="fa fa-tint" aria-hidden="true"></i>
+        <span>Humeur de bébé</span>
+        <span class="value" id="babyHumor">Bonne</span>
     </div>
-    <div id="tempBabyBlock" class="tile">
+
+    <div id="tempBabyBlock" class="tile red">
         <i class="fa fa-smile-o" aria-hidden="true"></i>
         <span>Température de bébé</span>
         <span class="value" id="tempBaby">37.1</span>
     </div>
-    <div id="hygroPieceBlock" class="tile">
+
+    <div id="tempPieceBlock" class="tile green">
+        <i class="fa fa-thermometer-half" aria-hidden="true"></i>
+        <span>Température de la pièce</span>
+        <span class="value" id="tempRoom">25.4</span>
+    </div>
+
+    <div id="hygroPieceBlock" class="tile orange">
         <i class="fa fa-tint" aria-hidden="true"></i>
         <span>Humidité de l'air</span>
         <span class="value" id="humidity">45%</span>
