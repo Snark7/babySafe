@@ -12,6 +12,12 @@
 </head>
 <body>
 <div class="main" role="main">
+    <div class="systemStatus">
+        <div id="systNetwork" class="network"><i class="fa fa-wifi"></i> Pictime Visiteur</div>
+        <div id="systTime" class="time">Synchronisation...</div>
+        <div id="systBattery" class="battery"><i class="fa fa-battery-3"></i></div>
+    </div>
+
     <div class="logo">
         <img src="/src/50ndg/img/logo.png">
     </div>
@@ -56,6 +62,11 @@
     </div>
 </div>
 <script>
+
+    setInterval(function(){
+        document.getElementById('systTime').innerHTML = new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString();
+    }, 1000);
+
     function setColor(block, color) {
         let oldColor = block.data('color');
         if (oldColor !== color) {

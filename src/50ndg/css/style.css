@@ -1,5 +1,12 @@
 body .main {width: 100%; padding: 0 1%}
 .logo img {width: 100%; max-width: 150px; margin:0 auto; display: block}
+
+.systemStatus {width: 100%; display: block; overflow: hidden; color: #666}
+.systemStatus div {float: left}
+.systemStatus .network {width: 40%; text-align: left}
+.systemStatus .time {width: 50%; text-align: right}
+.systemStatus .battery {width: 10%; text-align: right; padding-top: 2px; color: #00ac00}
+
 .tile {width: 48%; display: block; float: left; margin: 3px 1%; padding: 10px 0; background-color: #2aabd2; color: white; height: 30%; transition: background-color 0.4s;}
 .tile.red {background-color: firebrick}
 .tile.green {background-color: forestgreen}
