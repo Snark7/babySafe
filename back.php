@@ -13,9 +13,9 @@
 </head>
 <body>
 
-<button onclick="sendMessage({type: 'message', message:'Bébé est content'})">Content</button>
-<button onclick="sendMessage({type: 'message', message:'Bébé est triste'})">triste</button>
-<button onclick="sendMessage({type: 'message', message:'Bébé est mort'})">pleure</button>
+<!--<button onclick="sendMessage({type: 'message', message:'Bébé est content'})">Content</button>-->
+<!--<button onclick="sendMessage({type: 'message', message:'Bébé est triste'})">triste</button>-->
+<!--<button onclick="sendMessage({type: 'message', message:'Bébé est mort'})">pleure</button>-->
 
 <div>
     Temperature de la pièce:
@@ -38,7 +38,8 @@
 <button onclick="sendMessage({type: 'humor', message:'Bonne', icon:'smile-o', color: 'green'})">Bonne</button>
 <button onclick="sendMessage({type: 'humor', message:'En colère', icon:'frown-o', color: 'red'})">Colère</button>
 <button onclick="sendMessage({type: 'humor', message:'A faim !', icon:'cutlery', color: 'orange'})">A faim !</button>
-<button onclick="sendMessage({type: 'humor', message:'Doit être changé', icon:'signing', color: 'orange'})">A changer</button>
+<button onclick="sendMessage({type: 'humor', message:'A changer', icon:'signing', color: 'orange'})">A changer</button>
+<button onclick="sendMessage({type: 'humor', message:'Mort', icon:'frown-o', color: 'black'})">Dead</button>
 
 <script>
     $(function () {
