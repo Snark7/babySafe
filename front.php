@@ -26,25 +26,25 @@
         <span>Alert</span>
     </div>
 
-    <div id="hygroPieceBlock" class="tile">
-        <i class="fa fa-tint" aria-hidden="true"></i>
+    <div id="humorBlock" class="tile">
+        <i class="fa" aria-hidden="true"></i>
         <span>Humeur de bébé</span>
         <span class="value" id="babyHumor">Bonne</span>
     </div>
 
-    <div id="tempBabyBlock" class="tile red">
+    <div id="tempBabyBlock" class="tile">
         <i class="fa fa-smile-o" aria-hidden="true"></i>
         <span>Température de bébé</span>
         <span class="value" id="tempBaby">37.1</span>
     </div>
 
-    <div id="tempPieceBlock" class="tile green">
+    <div id="tempPieceBlock" class="tile">
         <i class="fa fa-thermometer-half" aria-hidden="true"></i>
         <span>Température de la pièce</span>
         <span class="value" id="tempRoom">25.4</span>
     </div>
 
-    <div id="hygroPieceBlock" class="tile orange">
+    <div id="hygroPieceBlock" class="tile">
         <i class="fa fa-tint" aria-hidden="true"></i>
         <span>Humidité de l'air</span>
         <span class="value" id="humidity">45%</span>
@@ -111,8 +111,21 @@
             case 'message':
                 $('#message').text(message.message);
                 break;
+            case 'humor':
+                $('#babyHumor').text(message.message);
+                setColor($('#humorBlock'), message.color);
+                let item = $('#humorBlock').find('i');
+                item.removeClass('fa-'+item.data('icon'));
+                item.addClass('fa-'+message.icon).data('icon', message.icon);
+                break;
         }
     }
+
+    onMessage({type: 'tempRoom', value: 40});
+    onMessage({type: 'humidity', value: 45});
+    onMessage({type: 'tempBaby', value: 85});
+    onMessage({type: 'humor', message:'Bonne', icon:'smile-o', color: 'green'});
+    //    onMessage({type:'tempRoom',value:25.4});
 </script>
 </body>
 </html>

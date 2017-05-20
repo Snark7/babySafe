@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="/src/font-awesome/css/font-awesome.min.css"/>
     <link rel="stylesheet" type="text/css" href="/src/50ndg/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="/src/50ndg/css/back.css"/>
+    <meta name="viewport" content="width=device_display, initial-scale=1.0"/>
 </head>
 <body>
 
@@ -32,41 +33,54 @@
     Bruit:
     <div id="sliderNoise"></div>
 </div>
+<div>Humeur</div>
+<button onclick="sendMessage({type: 'humor', message:'Triste', icon:'frown-o', color: ''})">Triste</button>
+<button onclick="sendMessage({type: 'humor', message:'Bonne', icon:'smile-o', color: 'green'})">Bonne</button>
+<button onclick="sendMessage({type: 'humor', message:'En colère', icon:'frown-o', color: 'red'})">Colère</button>
+<button onclick="sendMessage({type: 'humor', message:'A faim !', icon:'cutlery', color: 'orange'})">A faim !</button>
+<button onclick="sendMessage({type: 'humor', message:'Doit être changé', icon:'signing', color: 'orange'})">A changer</button>
+
 <script>
     $(function () {
         $("#sliderRoom").slider({
-            value : 40,
+            value:  40,
             change: function (e, ui) {
                 sendMessage({type: 'tempRoom', value: ui.value});
             }
         });
 
         $("#sliderBaby").slider({
-            value : 85,
+            value:  85,
             change: function (e, ui) {
                 sendMessage({type: 'tempBaby', value: ui.value});
             }
         });
         $("#sliderHum").slider({
-            value : 45,
+            value:  45,
             change: function (e, ui) {
                 sendMessage({type: 'humidity', value: ui.value});
             }
         });
         $("#sliderNoise").slider({
-            min: 40,
-            max: 130,
-            value: 70,
+            min:    40,
+            max:    130,
+            value:  70,
             change: function (e, ui) {
                 sendMessage({type: 'noise', value: ui.value});
             }
         });
 
-        setInterval(function() {
-            let value = $("#sliderNoise").slider( "option", "value" );
-            value += Math.round((Math.random()*10)-5);
+        setInterval(function () {
+            let value = $("#sliderNoise").slider("option", "value");
+            value += Math.round((Math.random() * 10) - 5);
             sendMessage({type: 'noise', value: value});
         }, 400);
+
+        setInterval(function () {
+            let value = $("#sliderRoom").slider("option", "value");
+            value += Math.round((Math.random() * 1) - 0.5);
+            sendMessage({type: 'tempRoom', value: value});
+        }, 2000);
     });
 </script>
 
