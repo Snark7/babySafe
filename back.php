@@ -39,7 +39,7 @@
 <button onclick="sendMessage({type: 'humor', message:'En colère', icon:'frown-o', color: 'red',  info : '<p>Votre bébé est en colère</p><p>Ses pleurs sont plus fort !</p>'})">Colère</button>
 <button onclick="sendMessage({type: 'humor', message:'A faim !', icon:'cutlery', color: 'orange', info : '<p>Votre bébé à faim</p><p>Il est temps de préparer un biberon</p><p>Dernier repas : il y a 3h </p>'})">A faim !</button>
 <button onclick="sendMessage({type: 'humor', message:'A changer', icon:'signing', color: 'orange', info : '<p>Votre est à changer</p><p>Dernière couche changéé : il a 2h</p>'})">A changer</button>
-<button onclick="sendMessage({type: 'humor', message:'Mort', icon:'frown-o', color: 'black',  info : '<p>Aucun signe vitaux détecté</p><p>BabySafe décline toute responsabilitée</p>'})">Dead</button>
+<button onclick="sendMessage({type: 'humor', message:'Mort', icon:'frown-o', color: 'black',  info : '<p>Aucun signe vitaux détecté</p><p>Baby Safe décline toute responsabilitée</p>'})">Dead</button>
 
 <script>
     $(function () {
