@@ -42,7 +42,7 @@
     </div>
 
     <div id="tempBabyBlock" class="tile">
-        <i class="fa fa-smile-o" aria-hidden="true"></i>
+        <i class="fa fa-thermometer-half" aria-hidden="true"></i>
         <span>Température de bébé</span>
         <span class="value" id="tempBaby">37.1</span>
         <div class="infos">
@@ -52,7 +52,7 @@
     </div>
 
     <div id="tempPieceBlock" class="tile">
-        <i class="fa fa-thermometer-half" aria-hidden="true"></i>
+        <i class="fa fa-home" aria-hidden="true"></i>
         <span>Température de la pièce</span>
         <span class="value" id="tempRoom">25.4</span>
         <div class="infos">
@@ -82,7 +82,7 @@
 </div>
 <script>
 
-    setInterval(function(){
+    setInterval(function () {
         document.getElementById('systTime').innerHTML = new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString();
     }, 1000);
 
@@ -145,8 +145,8 @@
                 $('#babyHumor').text(message.message);
                 setColor($('#humorBlock'), message.color);
                 let item = $('#humorBlock').find('i');
-                item.removeClass('fa-'+item.data('icon'));
-                item.addClass('fa-'+message.icon).data('icon', message.icon);
+                item.removeClass('fa-' + item.data('icon'));
+                item.addClass('fa-' + message.icon).data('icon', message.icon);
                 $('#humorBlock .infos').html(message.info);
                 break;
         }
@@ -155,22 +155,21 @@
     onMessage({type: 'tempRoom', value: 40});
     onMessage({type: 'humidity', value: 45});
     onMessage({type: 'tempBaby', value: 85});
-    onMessage({type: 'humor', message:'Bonne', icon:'smile-o', color: 'green'});
-    //    onMessage({type:'tempRoom',value:25.4});
+    onMessage({type: 'humor', message: 'Bonne', icon: 'smile-o', color: 'green'});
 
-    $('.tile').click(function() {
+    $('.tile').click(function () {
 
         let items = $('.tile').not($(this));
         if ($(this).is('.active')) {
-            items.fadeIn(100, function() {
-                $(this).removeClass('active');
+            $(this).removeClass('active');
+            items.fadeIn(100, function () {
             }.bind(this));
         } else {
-            items.fadeOut(100, function() {
+            items.fadeOut(100, function () {
                 $(this).addClass('active');
             }.bind(this));
         }
-    })
+    });
 </script>
 </body>
 </html>
