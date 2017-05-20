@@ -5,7 +5,7 @@ function init() {
             url:      '/read.php',
             dataType: 'json',
             success:  function (e) {
-                for (let i in e) {
+                for (var i in e) {
                     onMessage(JSON.parse(e[i]));
                 }
             }
