@@ -6,9 +6,9 @@
     <script type="text/javascript" src="back.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="/src/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="/src/50ndg/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="/src/50ndg/css/back.css" />
+    <link rel="stylesheet" type="text/css" href="/src/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/src/50ndg/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/src/50ndg/css/back.css"/>
 </head>
 <body>
 
@@ -29,30 +29,44 @@
     <div id="sliderHum"></div>
 </div>
 <div>
-    :
-    <div id="sliderHum"></div>
+    Bruit:
+    <div id="sliderNoise"></div>
 </div>
 <script>
     $(function () {
         $("#sliderRoom").slider({
+            value : 40,
             change: function (e, ui) {
                 sendMessage({type: 'tempRoom', value: ui.value});
-            },
-            value : 40
+            }
         });
 
         $("#sliderBaby").slider({
+            value : 85,
             change: function (e, ui) {
                 sendMessage({type: 'tempBaby', value: ui.value});
-            },
-            value : 85
+            }
         });
         $("#sliderHum").slider({
+            value : 45,
             change: function (e, ui) {
                 sendMessage({type: 'humidity', value: ui.value});
-            },
-            value : 45
+            }
         });
+        $("#sliderNoise").slider({
+            min: 40,
+            max: 130,
+            value: 70,
+            change: function (e, ui) {
+                sendMessage({type: 'noise', value: ui.value});
+            }
+        });
+
+        setInterval(function() {
+            let value = $("#sliderNoise").slider( "option", "value" );
+            value += Math.round((Math.random()*20)-10);
+            sendMessage({type: 'noise', value: value});
+        }, 400);
     });
 </script>
 
