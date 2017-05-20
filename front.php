@@ -36,6 +36,10 @@
         <i class="fa" aria-hidden="true"></i>
         <span>Humeur de bébé</span>
         <span class="value" id="babyHumor">Bonne</span>
+        <div class="infos">
+            Votre bébé est en forme !<br />
+            Il n'a pas pleuré depuis 32mn.<br />
+        </div>
     </div>
 
     <div id="tempBabyBlock" class="tile">
@@ -137,6 +141,20 @@
     onMessage({type: 'tempBaby', value: 85});
     onMessage({type: 'humor', message:'Bonne', icon:'smile-o', color: 'green'});
     //    onMessage({type:'tempRoom',value:25.4});
+
+    $('.tile').click(function() {
+
+        let items = $('.tile').not($(this));
+        if ($(this).is('.active')) {
+            items.fadeIn(100, function() {
+                $(this).removeClass('active');
+            }.bind(this));
+        } else {
+            items.fadeOut(100, function() {
+                $(this).addClass('active');
+            }.bind(this));
+        }
+    })
 </script>
 </body>
 </html>

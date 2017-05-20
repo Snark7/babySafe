@@ -7,12 +7,17 @@ body .main {width: 100%; padding: 0 1%}
 .systemStatus .time {width: 50%; text-align: right}
 .systemStatus .battery {width: 10%; text-align: right; padding-top: 2px; color: #00ac00}
 
-.tile {width: 48%; display: block; float: left; margin: 3px 1%; padding: 10px 0; background-color: #2aabd2; color: white; height: 30%; transition: background-color 0.4s,color 0.4s;}
+.tile {width: 48%; display: block; float: left; margin: 3px 1%; padding: 10px 0; background-color: #2aabd2; color: white; height: 30%;
+    transition: background-color 0.4s,color 0.4s,width 0.4s,height 0.4s;
+}
 .tile.red {background-color: firebrick}
 .tile.green {background-color: forestgreen}
 .tile.orange {background-color: orange}
 .tile.black {background-color: black; color: white;}
+.tile.active {margin: 0 auto; float:none; height: 50%; width: 90%;}
 .tile i, .tile span {display: block; text-align: center}
 .tile i {font-size: 50px}
 .tile span.value {font-size: 30px; margin-top: 15px}
 
+.infos { padding: 0 10px; display: none;}
+.tile.active .infos {display:block;}
