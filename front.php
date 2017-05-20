@@ -16,6 +16,19 @@
         <img src="/src/50ndg/img/logo.png">
     </div>
 
+<div id="message"></div>
+<div>
+    Température de la pièce:
+    <span id="tempRoom"></span>
+</div>
+<div>
+    Température de bébé:
+    <span id="tempBaby"></span>
+</div>
+<div>
+    Humidité de l'air:
+    <span id="humidity"></span>
+</div>
     <div class="alert alert-success" role="alert">
         <strong>Well done!</strong> You successfully read this important alert message.
     </div>
@@ -33,7 +46,23 @@
 </div>
 <script>
     function onMessage(message) {
-        $('body').text(message.message);
+        let tmp;
+        switch (message.type) {
+            case 'tempRoom':
+                tmp = 15 + (26 * (message.value / 100));
+                $('#tempRoom').text((Math.round(tmp * 10) / 10) + '°');
+                break;
+            case 'tempBaby':
+                tmp = 15 + (26 * (message.value / 100));
+                $('#tempBaby').text((Math.round(tmp * 10) / 10) + '°');
+                break;
+            case 'humidity':
+                $('#humidity').text(message.value + '%');
+                break;
+            case 'message':
+                $('#message').text(message.message);
+                break;
+        }
     }
 </script>
 </body>
