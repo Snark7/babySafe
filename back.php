@@ -64,7 +64,7 @@
 
         setInterval(function() {
             let value = $("#sliderNoise").slider( "option", "value" );
-            value += Math.round((Math.random()*20)-10);
+            value += Math.round((Math.random()*10)-5);
             sendMessage({type: 'noise', value: value});
         }, 400);
     });

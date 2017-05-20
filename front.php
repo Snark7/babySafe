@@ -67,7 +67,7 @@
     }
 
     function onMessage(message) {
-        let tmp;
+        let tmp, color;
         switch (message.type) {
             case 'tempRoom':
                 tmp = 15 + (26 * (message.value / 100));
@@ -76,16 +76,29 @@
             case 'tempBaby':
                 tmp = 15 + (26 * (message.value / 100));
                 $('#tempBaby').text((Math.round(tmp * 10) / 10) + '°');
+
+                color = '';
+                if (tmp > 35.5) {
+                    color = 'green';
+                }
+                if (tmp > 37.5) {
+                    color = 'orange';
+                }
+                if (tmp > 38) {
+                    color = 'red';
+                }
+                setColor($('#tempBabyBlock'), color);
+
                 break;
             case 'humidity':
                 $('#humidity').text(message.value + '%');
                 break;
             case 'noise':
-                let color = '';
-                if (message.value > 80) {
+                color = '';
+                if (message.value > 60) {
                     color = 'orange';
                 }
-                if (message.value > 100) {
+                if (message.value > 80) {
                     color = 'red';
                 }
 
