@@ -13,9 +13,4 @@ function init() {
     }, 400);
 }
 
-function onMessage(message) {
-    $('body').text(message.message);
-}
-
-
 init();

@@ -5,5 +5,10 @@
 </head>
 <body>
 
+<script>
+    function onMessage(message) {
+        $('body').text(message.message);
+    }
+</script>
 </body>
 </html>
