@@ -76,7 +76,7 @@
         <span class="value" id="noise">70 dB</span>
         <div class="infos">
             <p>Bébé à besoin d'un environnement calme</p>
-            <p>Pas plus de 80dB pour garantir le calme</p>
+            <p>Pas plus de 60dB pour garantir le calme</p>
         </div>
     </div>
 </div>
